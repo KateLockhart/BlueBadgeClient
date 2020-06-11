@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import APIURL from '../../../src/helpers/environment';
 
 const OpenTrailCreate = (props) => {
     const [trailname, setTrailname] = useState('');
@@ -10,7 +11,7 @@ const OpenTrailCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/opentails', {
+        fetch(`${APIURL}/opentrails`, {
             method: 'POST',
             body: JSON.stringify({trailname: trailname, location: location, length: length, difficulty: difficulty, comment: comment}),
             headers: new Headers({

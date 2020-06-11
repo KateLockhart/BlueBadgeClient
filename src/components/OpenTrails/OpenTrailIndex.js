@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import OpenTrailTable from './OpenTrailTable';
 import OpenTrailEdit from './OpenTrailEdit';
 import OpenTrailCreate from './OpenTrailCreate';
+import APIURL from '../../../src/helpers/environment';
 
 const OpenTrailIndex = (props) => {
     const [trails, setTrails] = useState([]);
@@ -10,7 +11,7 @@ const OpenTrailIndex = (props) => {
     const [trailsToUpdate, setTrailsToUpdate] = useState({});
 
     const fetchTrails = () => {
-        fetch('http://localhost:3000/opentrails', {
+        fetch(`${APIURL}/opentrails`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

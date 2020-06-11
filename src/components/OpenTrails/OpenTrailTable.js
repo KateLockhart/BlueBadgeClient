@@ -1,10 +1,11 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const OpenTrailTable = (props) => {
 console.log(props)
     const deleteTrail = (trail) => {
-        fetch(`http://localhost:3000/opentrails/${trail.id}`, {
+        fetch(`${APIURL}/opentrails/${trail.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

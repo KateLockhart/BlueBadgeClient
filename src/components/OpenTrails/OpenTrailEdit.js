@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import APIURL from '../../../src/helpers/environment';
 
 const OpenTrailEdit = (props) => {
     const [editTrailname, setEditTrailname] = useState(props.trailsToUpdate.trailname);
@@ -9,7 +10,7 @@ const OpenTrailEdit = (props) => {
     const [editComment, setEditComment] = useState(props.trailsToUpdate.comment);
 
     const trailUpdate = (event, trail) => {
-        fetch(`http://localhost:3000/opentrails/${props.trailsToUpdate.id}`, {
+        fetch(`${APIURL}/opentrails/${props.trailsToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({trailname: editTrailname, location: editLocation, length: editLength, difficulty: editDifficulty, comment: editComment}),
             headers: new Headers({
