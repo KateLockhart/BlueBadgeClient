@@ -18,8 +18,8 @@ const OpenTrailIndex = (props) => {
             })
         }).then( (res) => res.json() )
             .then ((trailData) => {
-                setTrails(trailData.trails);
-                console.log(trailData.trails)
+                setTrails(trailData.opentrails);
+                console.log(trailData.opentrails)
             })
     }
 
@@ -38,7 +38,7 @@ const OpenTrailIndex = (props) => {
 
     useEffect(() => {
         fetchTrails();
-    })
+    }, [])
 
     return(
         <Container>
