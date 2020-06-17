@@ -1,0 +1,16 @@
+@font-face {
+    font-family: blackForest;
+    src: url('../../assets/BLACK\ FOREST.ttf');
+}
+
+#navTitle {
+    font-family: blackForest;
+    font-size: 4.5em;
+    letter-spacing: 4px;
+    margin-left: 41%;
+    font-weight: 575;
+}
+
+#navBar {
+    height: 6em;
+}

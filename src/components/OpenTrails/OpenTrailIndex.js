@@ -4,6 +4,7 @@ import OpenTrailTable from './OpenTrailTable';
 import OpenTrailEdit from './OpenTrailEdit';
 import OpenTrailCreate from './OpenTrailCreate';
 import APIURL from '../../../src/helpers/environment';
+import TrailsSearch from './Trails/TrailsSearch';
 
 const OpenTrailIndex = (props) => {
     const [trails, setTrails] = useState([]);
@@ -44,9 +45,16 @@ const OpenTrailIndex = (props) => {
     return(
         <Container>
             <Row>
+                <Col md='6'>
+                    <TrailsSearch token={props.token} />
+                </Col>
+            </Row>
+            <Row>
                 <Col md='3'>
                     <OpenTrailCreate fetchTrails={fetchTrails} token={props.token} />
                 </Col>
+            </Row>
+            <Row>
                 <Col md='12'>
                     <OpenTrailTable trails={trails} editUpdateOpenTrail={editUpdateOpenTrail} updateOn={updateOn} fetchTrails={fetchTrails} token={props.token} />
                 </Col>

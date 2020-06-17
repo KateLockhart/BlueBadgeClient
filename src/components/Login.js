@@ -12,28 +12,29 @@ const Login = (props) => {
             method: 'POST',
             body: JSON.stringify({username: username, password: password}),
             headers: new Headers({
-                'Content-Type': 'applicantion/json'
+                'Content-Type': 'application/json'
             })
         }).then(
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken);
-        })
+        });
     }
 
     return(
         <div>
-            <h1>Login</h1>
-            <Form onSubmit={handleSubmit}>
+            
+            <Form onSubmit={handleSubmit} id='mainForm'>
+                <h2 style={{color: 'black', marginBottom: '6px'}}>Login</h2>
                 <FormGroup>
-                    <Label htmlFor='username'>Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+                    <Label htmlFor='username' id='mainLabel'>Username</Label>
+                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} type='text' pattern='^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$' required minLength='4' maxLength='15'/>
                 </FormGroup>
                 <FormGroup>
-                    <Label html='password'>Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                    <Label html='password' id='mainLabel'>Password</Label>
+                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} type='password' pattern='[a-zA-Z0-9]+' required minLength='5' maxLength='15'/>
                 </FormGroup>
-                <Button type='submit'>Login</Button>
+                <Button type='submit' color='success'>Login</Button>
             </Form>
         </div>
     )

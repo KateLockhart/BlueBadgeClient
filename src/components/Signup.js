@@ -24,21 +24,22 @@ const Signup = (props) => {
 
     return(
         <div>
-            <h1>Sign Up</h1>
-            <Form onSubmit={handleSubmit}>
+            
+            <Form onSubmit={handleSubmit} id='mainForm'>
+                <h2 style={{color: 'black', marginBottom: '6px'}}>Sign Up</h2>
                 <FormGroup>
-                    <Label htmlFor='username'>Username: </Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+                    <Label htmlFor='username' id='mainLabel'>Username: </Label>
+                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} type='text' pattern='^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$' minLength='4' maxLength='15' title='Username must include one number and be 4-15 characters in length.'/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='email'>Email: </Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name='email' value={email} />
+                    <Label htmlFor='email' id='mainLabel'>Email: </Label>
+                    <Input onChange={(e) => setEmail(e.target.value)} name='email' value={email} type='email' id='email' pattern='.+@.+.com' title='Must be in standard email format. Ex: yourname@email.com'/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='password'>Password: </Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                    <Label htmlFor='password' id='mainLabel'>Password: </Label>
+                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} type='password' pattern='[a-zA-Z0-9]+' minLength='5' maxLength='15'/>
                 </FormGroup>
-                <Button type='submit'>Signup</Button>
+                <Button type='submit' color='success' >Signup</Button>
             </Form>
         </div>
     )

@@ -32,33 +32,35 @@ const OpenTrailCreate = (props) => {
 
     return(
         <>
-            <h3>Add Your Other Trail Adventures:</h3>
-            <Form onSubmit={handleSubmit}>
+            
+            <Form onSubmit={handleSubmit} id='trailForm'>
+                <h4 style={{textAlign: 'center'}}>Add Your Own Trail Adventures:</h4>
                 <FormGroup>
-                    <Label htmlFor='trailname' />
+                    <Label htmlFor='trailname'>Trail Name:</Label>
                     <Input  name='trailname' value={trailname} onChange={(e) => setTrailname(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='location' />
+                    <Label htmlFor='location'>Trail Location:</Label>
                     <Input name='location' value={location} onChange={(e) => setLocation(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='length' />
-                    <Input name='length' value={length} onChange={(e) => setLength(e.target.value + ' miles')}/>
+                    <Label htmlFor='length'>Length:</Label>
+                    <Input name='length' value={length} onChange={(e) => setLength(e.target.value) }/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='difficulty' />
+                    <Label htmlFor='difficulty'>Difficulty:</Label>
                     <Input type='select' name='difficulty' value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
+                        <option></option>
                         <option value='Easy'>Easy</option>
                         <option value='Moderate'>Moderate</option>
                         <option value='Difficult'>Difficult</option>
                     </Input>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor='comment' />
+                    <Label htmlFor='comment'>Comments:</Label>
                     <Input name='comment' value={comment} onChange={(e) => setComment(e.target.value)} />
                 </FormGroup>
-                <Button type='submit'>Click to Submit!</Button>
+                <Button color='success' type='submit' style={{marginLeft: '35%'}}>Add your trail!</Button>
             </Form>
         </>
     )

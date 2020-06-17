@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
 import Navbar from './components/navbar/Navbar';
 import Auth from './components/auth/Auth';
 import TrailIndex from './components/OpenTrails/OpenTrailIndex';
@@ -26,8 +25,18 @@ function App() {
     }
 
     const protectedViews = () => {
-      return (sessionToken === localStorage.getItem('token') ? <TrailIndex token={sessionToken} /> 
-      : <Auth updateToken={updateToken} />)
+      return sessionToken === localStorage.getItem('token') ? (
+      <div>  
+        <TrailIndex token={sessionToken}/>
+        <footer class="page-footer font-small green">
+              <div class="footer-copyright text-center py-3" style={{color: 'white'}}>© 2020 Copyright:
+                <a href="https://indyhikes.herokuapp.com/" style={{color: '#2b7c20'}}> https://indyhikes.herokuapp.com/</a>
+              </div>
+        </footer> 
+      </div>
+      ) : (
+      <Auth updateToken={updateToken} />
+      );
     }
 
     return(
