@@ -60,7 +60,7 @@ const OpenTrailCreate = (props) => {
                     <Label htmlFor='comment'>Comments:</Label>
                     <Input name='comment' value={comment} onChange={(e) => setComment(e.target.value)} />
                 </FormGroup>
-                <Button color='success' type='submit' style={{marginLeft: '35%'}}>Add your trail!</Button>
+                <Button color='success' type='submit' style={{marginLeft: '25%'}}>Add your trail!</Button>
             </Form>
         </>
     )
