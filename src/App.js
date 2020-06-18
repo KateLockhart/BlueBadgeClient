@@ -35,7 +35,7 @@ function App() {
         </footer> 
       </div>
       ) : (
-      <Auth updateToken={updateToken} />
+        <Auth updateToken={updateToken} />
       );
     }
 
