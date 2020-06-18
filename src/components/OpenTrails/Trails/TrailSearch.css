@@ -25,10 +25,12 @@
 
 #listTrailName{
     font-weight: 575;
+    text-align: left;
 }
 
 #listItem{
     list-style: none;
+    text-align: left;
 }
 
 ::-webkit-scrollbar {
