@@ -53,7 +53,7 @@ const OpenTrailEdit = (props) => {
                         <Label htmlFor='comment' >Comment: </Label>
                         <Input name='comment' value={editComment} onChange={(e) => setEditComment(e.target.value)} />
                     </FormGroup>
-                    <Button type='submit' color="success" style={{ marginLeft: '20%'}}>Update Your Trail</Button>
+                    <Button type='submit' color="success">Update Your Trail</Button>
                 </Form>
             </ModalBody>
         </Modal>
